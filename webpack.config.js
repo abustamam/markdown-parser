@@ -27,10 +27,6 @@ module.exports = {
       include: path.join(__dirname, 'src')
     },
     {
-      test: /\.less$/,
-      loader: "style!css!less"
-    },
-    {
       test: /\.sass$/,
       loader: "style!css!sass"
     }]
