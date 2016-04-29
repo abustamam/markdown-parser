@@ -9,7 +9,9 @@ class RenderArea extends React.Component {
     render() {
     	const parsed = marked(this.props.text)
 
-        return <div className="renderAreaDiv" dangerouslySetInnerHTML={{__html: parsed}}>
+        return <div className="renderAreaDiv">
+        	<div className="header">Its rendered!</div>
+        	<div className="renderArea" dangerouslySetInnerHTML={{__html: parsed}} />
         </div>
     }
 }

@@ -8,13 +8,25 @@
 
 .textareaDiv
 	flex: 1
+	display: flex
+	flex-direction: column
 	height: 100%
-
-.textarea
-	width: calc(100% - 4px)
-	height: calc(100% - 4px)
+	.textarea
+		width: 100%
+		flex: 1
+		display: flex
+		flex-direction: column
+		textarea
+			flex: 1
+ 
+.header
+	margin: 5px
+	padding: 5px
+	display: flex
+	justify-content: center
+	font-size: 30px
 
 .renderAreaDiv
 	flex: 1
-	height: calc(100% - 20px)
-	padding: 10px
+	// height: calc(100% - 20px)
+	padding: 0 10px 10px 10px

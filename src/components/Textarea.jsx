@@ -11,7 +11,10 @@ class Textarea extends React.Component {
     
     render() {
         return <div className="textareaDiv">
-        	<textarea className="textarea" value={this.props.text} onChange={(e) => this.props.updateText(e.target.value)}/>
+        	<div className="header">Type in text to be rendered here</div>
+        	<div className="textarea">
+        		<textarea className="textbox" value={this.props.text} onChange={(e) => this.props.updateText(e.target.value)}/>
+        	</div>
         </div>
     }
 }
