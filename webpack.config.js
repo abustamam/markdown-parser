@@ -1,7 +1,14 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path')
+const webpack = require('webpack')
+const merge = require('webpack-merge')
 
-module.exports = {
+const TARGET = process.env.npm_lifecyle_event
+const PATHS = {
+  src: path.join(__dirname, 'src'),
+  build: path.join(__dirname, 'build')
+}
+
+const common = {
   devtool: 'eval',
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:3000',
@@ -10,9 +17,8 @@ module.exports = {
     './src/index'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: PATHS.build,
     filename: 'bundle.js',
-    publicPath: '/static/'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
@@ -31,4 +37,24 @@ module.exports = {
       loader: "style!css!sass"
     }]
   }
-};
+}
+
+if (TARGET === 'start' || !TARGET) {
+  module.exports = merge(common, {
+    devtool: 'eval-source-map',
+    devServer: {
+      contentBase: PATHS.build,
+      historyApiFallback: true,
+      hot: true,
+      inline: true,
+      progress: true,
+      stats: 'errors-only',
+      host: process.env.HOST,
+      port: process.env.PORT
+    }
+  })
+}
+
+if(TARGET === 'build') {
+  module.exports = merge(common, {})
+}
