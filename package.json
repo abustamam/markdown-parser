@@ -1,7 +1,7 @@
 {
-  "name": "react-hot-boilerplate",
+  "name": "Markdown-Parser",
   "version": "1.0.0",
-  "description": "Boilerplate for ReactJS project with hot code reloading",
+  "description": "Markdown Parser",
   "scripts": {
     "start": "webpack-dev-server",
     "lint": "eslint src",
@@ -26,7 +26,7 @@
   ],
   "author": "Rasheed Bustamam <rasheed.bustamam@gmail.com> (http://github.com/abustamam)",
   "license": "MIT",
-  "homepage": "https://github.com/abustamam/react-hot-boilerplate",
+  "homepage": "https://github.com/abustamam/markdown-parser",
   "devDependencies": {
     "babel-core": "^6.0.20",
     "babel-eslint": "^4.1.3",
